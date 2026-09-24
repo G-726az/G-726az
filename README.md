@@ -12,6 +12,8 @@
   <a href="mailto:gilsonmsanchez@gmail.com"><img src="./btn-gmail.svg" alt="Gmail" height="60" /></a>
   &nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/gilsonsanchez003"><img src="./btn-linkedin.svg" alt="LinkedIn" height="60" /></a>
+  &nbsp;&nbsp;
+  <img src="./stats/visitas.svg" alt="Visitas" height="60" />
 </p>
 
 ---
@@ -37,15 +39,7 @@
 ### 📊 Estadísticas
 
 <p align="center">
-  <img src="./profile-summary-card-output/tokyonight/0-profile-details.svg" width="100%" />
-</p>
-<p align="center">
-  <img src="./profile-summary-card-output/tokyonight/3-stats.svg" width="49%" />
-  <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=G-726az&theme=tokyonight&hide_border=true&locale=es" />
+  <img src="./stats/estadisticas.svg" alt="Estadísticas" width="100%" />
 </p>
 
 ---
@@ -59,9 +53,8 @@
   </picture>
 </p>
 
-<p align="center">
-  <img src="https://hits.sh/github.com/G-726az.svg?style=for-the-badge&label=Visitas%20al%20perfil&extraCount=13&color=5ce1e6&labelColor=1a1b27&logo=github" alt="Visitas" />
-</p>
-
 <!-- Onda de cierre -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:5ce1e6,100:021d54&height=120&section=footer" width="100%" />
+
+<!-- Contador de visitas (invisible) -->
+<img src="https://hits.sh/github.com/G-726az.svg" width="1" height="1" alt="" />
