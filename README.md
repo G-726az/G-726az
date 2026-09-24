@@ -9,8 +9,13 @@
 </p>
 
 <p align="center">
-  <a href="mailto:gilsonmsanchez@gmail.com"><img src="https://img.shields.io/badge/Gmail-gilsonmsanchez@gmail.com-021d54?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <img src="https://komarev.com/ghpvc/?username=G-726az&color=5ce1e6&style=for-the-badge&label=VISITAS" />
+  <a href="mailto:gilsonmsanchez@gmail.com"><img src="./btn-gmail.svg" alt="Gmail" height="60" /></a>
+  &nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/gilsonsanchez003"><img src="./btn-linkedin.svg" alt="LinkedIn" height="60" /></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=G-726az&color=5ce1e6&style=flat-square&label=%F0%9F%91%80+Visitas+al+perfil" alt="Visitas" />
 </p>
 
 ---
