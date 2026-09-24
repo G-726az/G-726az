@@ -24,6 +24,7 @@ async function getData() {
   if (process.env.MOCK) return JSON.parse(fs.readFileSync(process.env.MOCK, 'utf8'));
   const d = await gql(`query($login:String!){ user(login:$login){
     followers{totalCount}
+    privados: repositories(ownerAffiliations:OWNER, privacy:PRIVATE){ totalCount }
     contributionsCollection{
       totalCommitContributions totalPullRequestContributions
       contributionCalendar{ totalContributions weeks{ contributionDays{ contributionCount date } } }
@@ -46,6 +47,7 @@ async function getData() {
     commits: u.contributionsCollection.totalCommitContributions,
     prs: u.contributionsCollection.totalPullRequestContributions,
     repos: u.repositories.totalCount,
+    privados: u.privados.totalCount,
     stars: u.repositories.nodes.reduce((a, r) => a + r.stargazerCount, 0),
     followers: u.followers.totalCount,
     days, langs,
@@ -109,7 +111,7 @@ function statsSVG(D) {
   const kpis = [
     { label: 'Contribuciones', sub: 'último año', v: D.total, c: '#5ce1e6', icon: 'M4 18h16M6 15V9m4 6V5m4 10v-4m4 4V7' },
     { label: 'Commits', sub: 'último año', v: D.commits, c: '#7aa2f7', icon: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM2 12h6m8 0h6' },
-    { label: 'Repositorios', sub: 'públicos', v: D.repos, c: '#bb9af7', icon: 'M5 4h11l3 3v13H5zM9 4v5h6' },
+    { label: 'Repositorios', sub: D.privados ? `${D.privados} privados` : 'públicos', v: D.repos, c: '#bb9af7', icon: 'M5 4h11l3 3v13H5zM9 4v5h6' },
     { label: 'Racha actual', sub: `máxima: ${best} días`, v: cur, c: '#ff9e64', icon: 'M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-3 2-4 2-6 1 1 2 2 3 2 0-2 0-4 0-6z' },
   ];
   const tw = 196, gap = 12, tx0 = (W - (4 * tw + 3 * gap)) / 2;
