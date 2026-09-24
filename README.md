@@ -5,17 +5,13 @@
 
 <!-- Texto animado tipo máquina de escribir -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=5CE1E6&center=true&vCenter=true&width=650&lines=Hola%2C+soy+Gilson+%F0%9F%91%8B;Desarrollador+Full+Stack;Java+%7C+Spring+Boot+%7C+Angular+%7C+React;Cuenca%2C+Ecuador+%F0%9F%87%AA%F0%9F%87%A8" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=5CE1E6&center=true&vCenter=true&width=650&lines=Hola%2C+soy+Gilson+%F0%9F%91%8B;Desarrollador+Full+Stack;Java+%7C+Spring+Boot+%7C+Angular+%7C+React" alt="Typing SVG" />
 </p>
 
 <p align="center">
   <a href="mailto:gilsonmsanchez@gmail.com"><img src="./btn-gmail.svg" alt="Gmail" height="60" /></a>
   &nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/gilsonsanchez003"><img src="./btn-linkedin.svg" alt="LinkedIn" height="60" /></a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=G-726az&color=5ce1e6&style=flat-square&label=%F0%9F%91%80+Visitas+al+perfil" alt="Visitas" />
 </p>
 
 ---
@@ -61,6 +57,10 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/G-726az/G-726az/output/github-snake-dark.svg" />
     <img alt="Serpiente de contribuciones" src="https://raw.githubusercontent.com/G-726az/G-726az/output/github-snake.svg" />
   </picture>
+</p>
+
+<p align="center">
+  <img src="https://hits.sh/github.com/G-726az.svg?style=for-the-badge&label=Visitas%20al%20perfil&extraCount=13&color=5ce1e6&labelColor=1a1b27&logo=github" alt="Visitas" />
 </p>
 
 <!-- Onda de cierre -->
