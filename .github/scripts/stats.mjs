@@ -31,17 +31,27 @@ async function getData() {
     }
     repositories(ownerAffiliations:OWNER, isFork:false, first:100){
       totalCount
-      nodes{ stargazerCount languages(first:10, orderBy:{field:SIZE,direction:DESC}){ edges{ size node{ name color } } } }
+      nodes{ stargazerCount }
+    }
+    todos: repositories(ownerAffiliations:[OWNER, COLLABORATOR, ORGANIZATION_MEMBER], isFork:false, first:100){
+      nodes{ languages(first:10, orderBy:{field:SIZE,direction:DESC}){ totalSize edges{ size node{ name color } } } }
     }
   }}`, { login: USER });
   const u = d.user;
   const days = u.contributionsCollection.contributionCalendar.weeks.flatMap(w => w.contributionDays);
   const langs = {};
-  for (const repo of u.repositories.nodes)
-    for (const e of repo.languages.edges) {
+  // Cada proyecto pesa lo mismo: se suma el % de cada lenguaje dentro de su repo.
+  // Así un frontend en Angular/React cuenta igual que un backend grande en Java.
+  const IGNORAR = new Set(['Procfile', 'Dockerfile', 'Batchfile', 'Makefile', 'PowerShell']);
+  for (const repo of u.todos.nodes) {
+    const edges = repo.languages.edges.filter(e => !IGNORAR.has(e.node.name));
+    const tot = edges.reduce((a, e) => a + e.size, 0);
+    if (!tot) continue;
+    for (const e of edges) {
       langs[e.node.name] ??= { size: 0, color: e.node.color || '#8b93b3' };
-      langs[e.node.name].size += e.size;
+      langs[e.node.name].size += e.size / tot;
     }
+  }
   return {
     total: u.contributionsCollection.contributionCalendar.totalContributions,
     commits: u.contributionsCollection.totalCommitContributions,
@@ -160,7 +170,9 @@ ${labels}</g>`;
   const lx = cx + cw + 12, lw = W - tx0 - lx, ly = cy;
   const total = Object.values(D.langs).reduce((a, l) => a + l.size, 0) || 1;
   let langs = Object.entries(D.langs).sort((a, b) => b[1].size - a[1].size);
-  if (langs.length > 5) { const rest = langs.slice(5).reduce((a, l) => a + l[1].size, 0); langs = [...langs.slice(0, 5), ['Otros', { size: rest, color: '#565f89' }]]; }
+  const keep = langs.filter(([, l], i) => i < 5 && l.size / total >= 0.02);
+  const rest = langs.filter(l => !keep.includes(l)).reduce((a, l) => a + l[1].size, 0);
+  langs = rest > 0 ? [...keep, ['Otros', { size: rest, color: '#565f89' }]] : keep;
   const r = 52, dcx = lx + lw / 2, dcy = ly + 118;
   let acc = 0, segs = '', legend = '';
   langs.forEach(([name, l], i) => {
@@ -245,4 +257,4 @@ fs.writeFileSync(`${OUT}/estadisticas.svg`, statsSVG(D));
 const v = await getVisits();
 fs.writeFileSync(`${OUT}/visitas.svg`, visitsSVG(v));
 fs.writeFileSync(META, JSON.stringify(meta, null, 2));
-console.log('Listo:', { ...D, days: D.days.length, visits: v });
+console.log('Listo:', { ...D, days: D.days.length, visits: v, token: process.env.GITHUB_TOKEN?.startsWith('ghp_') ? 'STATS_TOKEN (incluye privados)' : 'automático (solo públicos)' });
