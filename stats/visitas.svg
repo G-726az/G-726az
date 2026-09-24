@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60">
+<defs>
+ <linearGradient id="bd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bb9af7"/><stop offset=".5" stop-color="#5ce1e6"/><stop offset="1" stop-color="#bb9af7"/>
+  <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="3s" repeatCount="indefinite"/></linearGradient>
+ <linearGradient id="sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <clipPath id="cp"><rect x="2" y="2" width="236" height="56" rx="28"/></clipPath>
+</defs>
+<style>
+ .in{opacity:0;animation:in .7s cubic-bezier(.2,.8,.2,1) .1s forwards}
+ .sh{animation:sweep 3.2s ease-in-out infinite}
+ .glow{animation:glow 2.4s ease-in-out infinite}
+ .lid{transform-box:fill-box;transform-origin:50% 50%;animation:blink 4s ease-in-out infinite}
+ .pupil{animation:look 4s ease-in-out infinite}
+ .odo{animation:odo 1.8s cubic-bezier(.15,.85,.25,1) .4s forwards}
+ @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+ @keyframes sweep{0%{transform:translateX(-140px)}60%,100%{transform:translateX(280px)}}
+ @keyframes glow{0%,100%{opacity:.25}50%{opacity:.7}}
+ @keyframes blink{0%,44%,52%,100%{transform:scaleY(1)}48%{transform:scaleY(.1)}}
+ @keyframes look{0%,20%{transform:translateX(0)}30%,45%{transform:translateX(-3px)}60%,75%{transform:translateX(3px)}90%,100%{transform:translateX(0)}}
+ @keyframes odo{from{transform:translateY(0)}to{transform:translateY(var(--to))}}
+</style>
+<g class="in">
+ <rect x="2" y="2" width="236" height="56" rx="28" fill="#1a1b27"/>
+ <circle class="glow" cx="34" cy="30" r="20" fill="#bb9af7" opacity=".3"/>
+ <g clip-path="url(#cp)"><rect class="sh" x="0" y="0" width="100" height="60" fill="url(#sh)" transform="skewX(-20)"/></g>
+ <rect x="2" y="2" width="236" height="56" rx="28" fill="none" stroke="url(#bd)" stroke-width="2.5"/>
+ <g class="lid"><path d="M20 30c4-7 9-10 14-10s10 3 14 10c-4 7-9 10-14 10s-10-3-14-10z" fill="#e6edf3"/>
+ <g class="pupil"><circle cx="34" cy="30" r="5.5" fill="#5ce1e6"/><circle cx="34" cy="30" r="2.6" fill="#1a1b27"/><circle cx="35.6" cy="28.4" r="1.2" fill="#fff"/></g></g>
+ <text x="62" y="28" style="font:700 17px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#e6edf3;letter-spacing:.4px">Visitas</text>
+ <text x="62" y="44" style="font:500 11.5px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#8b93b3">al perfil</text>
+ <clipPath id="c8"><rect x="186.72" y="20.4" width="17.64" height="20.9"/></clipPath>
+<g clip-path="url(#c8)"><g class="odo" style="--to:-290.4px;animation-delay:0.40s">
+<text x="195.54" y="38" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">0</text><text x="195.54" y="64.4" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">1</text><text x="195.54" y="90.8" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">2</text><text x="195.54" y="117.19999999999999" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">3</text><text x="195.54" y="143.6" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">4</text><text x="195.54" y="170" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">5</text><text x="195.54" y="196.39999999999998" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">6</text><text x="195.54" y="222.79999999999998" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">7</text><text x="195.54" y="249.2" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">8</text><text x="195.54" y="275.6" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">9</text><text x="195.54" y="302" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">0</text><text x="195.54" y="328.4" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">1</text>
+</g></g><clipPath id="c9"><rect x="200.36" y="20.4" width="17.64" height="20.9"/></clipPath>
+<g clip-path="url(#c9)"><g class="odo" style="--to:-396px;animation-delay:0.52s">
+<text x="209.18" y="38" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">0</text><text x="209.18" y="64.4" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">1</text><text x="209.18" y="90.8" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">2</text><text x="209.18" y="117.19999999999999" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">3</text><text x="209.18" y="143.6" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">4</text><text x="209.18" y="170" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">5</text><text x="209.18" y="196.39999999999998" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">6</text><text x="209.18" y="222.79999999999998" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">7</text><text x="209.18" y="249.2" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">8</text><text x="209.18" y="275.6" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">9</text><text x="209.18" y="302" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">0</text><text x="209.18" y="328.4" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">1</text><text x="209.18" y="354.79999999999995" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">2</text><text x="209.18" y="381.2" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">3</text><text x="209.18" y="407.59999999999997" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">4</text><text x="209.18" y="434" text-anchor="middle" style="font:800 22px 'Segoe UI',Ubuntu,'Helvetica Neue',sans-serif;fill:#5ce1e6">5</text>
+</g></g>
+</g></svg>
