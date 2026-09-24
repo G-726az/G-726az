@@ -28,7 +28,7 @@
 ### 🛠️ Tecnologías
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,spring,angular,react,js,html,css,python,git,github,vscode&perline=11" alt="Tecnologías" />
+  <img src="./tecnologias.svg" alt="Tecnologías" width="100%" />
 </p>
 
 ---
@@ -36,8 +36,11 @@
 ### 📊 Estadísticas
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=G-726az&show_icons=true&theme=tokyonight&hide_border=true&locale=es" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=G-726az&layout=compact&theme=tokyonight&hide_border=true&locale=es" />
+  <img src="./profile-summary-card-output/tokyonight/0-profile-details.svg" width="100%" />
+</p>
+<p align="center">
+  <img src="./profile-summary-card-output/tokyonight/3-stats.svg" width="49%" />
+  <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%" />
 </p>
 
 <p align="center">
