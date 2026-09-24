@@ -1,9 +1,11 @@
-name: Generar tarjetas de estadisticas
+name: Generar estadisticas animadas
 
 on:
   schedule:
-    - cron: "0 5 * * *"   # una vez al día
-  workflow_dispatch:       # permite ejecutarlo a mano
+    - cron: "0 */3 * * *"   # cada 3 horas
+  workflow_dispatch:         # permite ejecutarlo a mano
+  push:
+    branches: [main]
 
 jobs:
   build:
@@ -12,12 +14,21 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: vn7n24fzkq/github-profile-summary-cards@release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
         with:
-          USERNAME: ${{ github.repository_owner }}
-          BRANCH_NAME: "main"
-          UTC_OFFSET: -5
-          THEME: "tokyonight"
-          AUTO_PUSH: true
+          node-version: 20
+
+      - name: Generar SVG
+        run: node .github/scripts/stats.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.repository_owner }}
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stats
+          git diff --staged --quiet || git commit -m "Actualizar estadisticas"
+          git push
