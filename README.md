@@ -24,7 +24,6 @@
 - 💼 Experiencia en **soporte técnico**, mantenimiento de equipos e **implementación de sistemas** en empresas y municipios
 - ⚙️ Desarrollo aplicaciones con **Java + Spring Boot** en el backend y **Angular / React** en el frontend
 - 🌱 Siempre aprendiendo nuevas tecnologías
-- 📍 Cuenca, Ecuador
 
 ---
 
